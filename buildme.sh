@@ -184,8 +184,8 @@ echo "[BUILD]: Cleaning kernel (make mrproper)...";
 make mrproper
 echo "[BUILD]: Using defconfig: $DEFCONFIG...";
 make $DEFCONFIG
-echo "[BUILD]: Changing CONFIG_LOCALVERSION to: -bricked-"$CODENAME"-"$BRANCH" ...";
-sed -i "/CONFIG_LOCALVERSION=\"/c\CONFIG_LOCALVERSION=\"-bricked-"$CODENAME"-"$BRANCH"\"" .config
+echo "[BUILD]: Changing CONFIG_LOCALVERSION to: -ChaOS.bricked-"$CODENAME"-"$BRANCH" ...";
+sed -i "/CONFIG_LOCALVERSION=\"/c\CONFIG_LOCALVERSION=\"-ChaOS.bricked-"$CODENAME"-"$BRANCH"\"" .config
 
 #kcontrol necessities
 if [ $(cat .config | grep 'CONFIG_ARCH_MSM=y' | tail -n1) == "CONFIG_ARCH_MSM=y" ]; then
